@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal resume and research portfolio">
+  <title>My Resume | Personal Portfolio</title>
+  <style>
+    :root { --navy:#223a70; --navy-dark:#172a52; --ink:#253248; --muted:#64748b; --bg:#f3f6fb; --line:#dce4f0; --white:#fff; }
+    * {box-sizing:border-box}
+    body {margin:0; background:var(--bg); color:var(--ink); font:15px/1.72 "Segoe UI", "Noto Sans TC", Arial, sans-serif;}
+    a {color:#1f579c; overflow-wrap:anywhere}
+    .page {max-width:1040px; margin:34px auto; background:var(--white); box-shadow:0 14px 45px rgba(25,44,77,.09);}
+    header {background:linear-gradient(120deg,var(--navy-dark),var(--navy));color:#fff;padding:37px 43px;display:flex;gap:26px;align-items:center;justify-content:space-between;}
+    header h1 {font-size:32px;letter-spacing:.3px;margin:0 0 4px;line-height:1.25}
+    .subtitle {font-size:16px;opacity:.94;margin:0 0 15px}
+    .contacts {display:flex;gap:7px 17px;flex-wrap:wrap;font-size:13px}
+    .contacts a {color:#fff;text-decoration:underline;text-underline-offset:3px}
+    .profile-pic {width:110px;height:110px;object-fit:cover;border:3px solid rgba(255,255,255,.85);border-radius:50%;flex:none;background:#e2e9f6}
+    .profile-placeholder {width:110px;height:110px;border:2px dashed rgba(255,255,255,.6);border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;text-align:center;font-size:12px;color:#fff;line-height:1.45;padding:10px}
+    main {padding:18px 43px 40px}
+    .toolbar {display:flex;justify-content:flex-end;align-items:center;gap:8px;padding:0 0 8px}
+    .toolbar button {font:inherit;font-size:13px;border:1px solid var(--navy);background:#fff;color:var(--navy);border-radius:6px;padding:5px 12px;cursor:pointer}
+    .toolbar button.active,.toolbar button:hover {background:var(--navy);color:#fff}
+    section {margin:22px 0 28px}
+    h2 {font-size:18px;margin:0 0 13px;padding-bottom:7px;color:var(--navy);border-bottom:2px solid var(--navy);letter-spacing:.6px}
+    h3 {font-size:15px;margin:0 0 2px;line-height:1.5}
+    p {margin:5px 0 10px}
+    ul {margin:6px 0 0;padding-left:21px}
+    li {margin:4px 0}
+    .entry {margin:0 0 18px}
+    .entry-head {display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+    .date {color:var(--muted);font-size:13px;white-space:nowrap}
+    .subline {color:var(--muted);font-size:14px}
+    .tag-list {display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .tag {font-size:13px;border:1px solid var(--line);border-radius:99px;background:#f5f8fe;padding:3px 11px}
+    .hint {color:#8a96a8;font-size:12px}
+    footer {text-align:center;font-size:12px;color:var(--muted);padding:2px 15px 27px}
+    @media(max-width:650px) {.page{margin:0;box-shadow:none}header{padding:28px 22px;align-items:flex-start}header h1{font-size:27px}main{padding:16px 22px 26px}.profile-pic,.profile-placeholder{width:76px;height:76px;font-size:10px}.contacts{display:block}.contacts span{display:block}.entry-head{display:block}.date{white-space:normal}}
+    @media print {body{background:white;font-size:11pt}.page{margin:0;max-width:none;box-shadow:none}header{print-color-adjust:exact;-webkit-print-color-adjust:exact}.toolbar,.hint,footer{display:none!important}section,.entry{break-inside:avoid}main{padding:15px 35px}a{color:inherit;text-decoration:none}}
+  </style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div>
+      <h1 id="name"></h1>
+      <p class="subtitle" id="subtitle"></p>
+      <div class="contacts" id="contacts"></div>
+    </div>
+    <img class="profile-pic" id="photo" src="profile.jpg" alt="Profile photo" hidden>
+    <div class="profile-placeholder" id="photo-placeholder">Your photo<br>profile.jpg</div>
+  </header>
+  <main>
+    <div class="toolbar" aria-label="Language and printing controls">
+      <button type="button" id="btn-en" onclick="render('en')">English</button>
+      <button type="button" id="btn-zh" onclick="render('zh')">中文</button>
+      <button type="button" onclick="window.print()" id="print-btn">PDF / Print</button>
+    </div>
+    <div id="resume"></div>
+  </main>
+  <footer>Personal resume · Hosted with GitHub Pages</footer>
+</div>
+<script>
+/*
+  ====== ONLY EDIT THE DATA BELOW / 只需修改以下資料 ======
+  1. Replace [bracketed text] with your own information.
+  2. Keep the field names unchanged.
+  3. Place your photo named profile.jpg beside index.html.
+  4. For each experience/publication/project, duplicate an object in the corresponding array.
+  5. Leave unused links as empty strings ("").
+*/
+const data = {
+  en: {
+    name: "[Your English Name]",
+    subtitle: "AI Researcher | Computer Vision | Deep Learning",
+    email: "", phone: "", github: "", linkedin: "", scholar: "", cv: "",
+    about: "[Introduce your background, research focus, and the kind of role you are seeking in 3–5 sentences.]",
+    education: [
+      { title: "National Yang Ming Chiao Tung University", subtitle: "Master's Program | [Department / Institute]", date: "[Start] – [Expected graduation]", bullets: ["Research interests: [Your research areas]"] },
+      { title: "[Undergraduate University]", subtitle: "[B.S. / B.A. in ...]", date: "[Start] – [End]", bullets: [] }
+    ],
+    experience: [
+      { title: "[Position / Internship Title]", subtitle: "[Company / Laboratory]", date: "[Start] – [End]", bullets: ["[What you built or researched]", "[Quantifiable outcome, if available]"] }
+    ],
+    publications: [
+      { title: "[Paper Title]", subtitle: "[Authors] · [Conference / Journal, Year]", date: "", bullets: [], link: "" }
+    ],
+    projects: [
+      { title: "[Research Project / GitHub Project]", subtitle: "[Python · PyTorch · Computer Vision]", date: "[Year]", bullets: ["[Problem, method, dataset, and result]"], link: "" }
+    ],
+    skills: ["Python", "PyTorch", "Deep Learning", "Computer Vision", "Linux", "Git"],
+    awards: ["[Award, competition, scholarship or relevant achievement]"],
+    titles: {about:"PERSONAL STATEMENT",education:"EDUCATION",experience:"RESEARCH & WORK EXPERIENCE",publications:"PUBLICATIONS",projects:"RESEARCH PROJECTS",skills:"TECHNICAL SKILLS",awards:"AWARDS & ACHIEVEMENTS"},
+    view:"View project / paper", print:"PDF / Print"
+  },
+  zh: {
+    name: "[你的中文姓名]",
+    subtitle: "人工智慧研究｜電腦視覺｜深度學習",
+    email: "", phone: "", github: "", linkedin: "", scholar: "", cv: "",
+    about: "[用 3–5 句介紹你的學歷背景、研究方向、代表成果與求職目標。]",
+    education: [
+      { title: "國立陽明交通大學", subtitle: "碩士班｜[研究所名稱]", date: "[入學] – [預計畢業]", bullets: ["研究方向：[研究領域]"] },
+      { title: "[大學名稱]", subtitle: "[學系及學位]", date: "[入學] – [畢業]", bullets: [] }
+    ],
+    experience: [
+      { title: "[職稱／實習名稱]", subtitle: "[公司／實驗室]", date: "[開始] – [結束]", bullets: ["[負責的技術或研究內容]", "[可以量化的成果]"] }
+    ],
+    publications: [
+      { title: "[論文名稱]", subtitle: "[作者] · [研討會／期刊、年份]", date: "", bullets: [], link: "" }
+    ],
+    projects: [
+      { title: "[研究／專案名稱]", subtitle: "[Python · PyTorch · 電腦視覺]", date: "[年份]", bullets: ["[研究問題、方法、資料集及實驗結果]"], link: "" }
+    ],
+    skills: ["Python", "PyTorch", "深度學習", "電腦視覺", "Linux", "Git"],
+    awards: ["[獎項、競賽、獎學金或其他成就]"],
+    titles: {about:"自我介紹",education:"學歷",experience:"研究與工作經歷",publications:"學術論文",projects:"研究專案",skills:"技術技能",awards:"獎項與成就"},
+    view:"檢視專案／論文", print:"列印／儲存 PDF"
+  }
+};
+
+// Safe rendering: all editable text is displayed as text, not interpreted as HTML.
+function el(tag, className, value) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (value !== undefined && value !== null) node.textContent = String(value);
+  return node;
+}
+function safeUrl(value) {
+  try { const u = new URL(value); return ['https:', 'http:'].includes(u.protocol) ? u.href : ''; }
+  catch { return ''; }
+}
+function render(lang) {
+  const d = data[lang], root = document.getElementById('resume');
+  document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : 'en';
+  document.getElementById('name').textContent = d.name;
+  document.getElementById('subtitle').textContent = d.subtitle;
+  document.title = `${d.name} | Resume`;
+  document.getElementById('print-btn').textContent = d.print;
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+  document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
+  document.getElementById('btn-zh').setAttribute('aria-pressed', lang === 'zh');
+  const contact = document.getElementById('contacts'); contact.replaceChildren();
+  if (d.email) { const x=el('span');const a=el('a','',d.email);a.href='mailto:'+d.email;x.append('Email: ',a);contact.appendChild(x); }
+  if (d.phone) contact.appendChild(el('span','',`Phone: ${d.phone}`));
+  for (const [k,label] of [['github','GitHub'],['linkedin','LinkedIn'],['scholar','Google Scholar'],['cv','CV PDF']]) {
+    const url = safeUrl(d[k]); if (!url) continue;
+    const a = el('a','',label);a.href=url;a.target='_blank';a.rel='noopener noreferrer';contact.appendChild(a);
+  }
+  root.replaceChildren();
+  function section(title) {const s=el('section');s.appendChild(el('h2','',title));root.appendChild(s);return s;}
+  section(d.titles.about).appendChild(el('p','',d.about));
+  function entries(items,title) {
+    if (!items.length) return;
+    const s=section(title);
+    for (const item of items) {
+      const wrap=el('article','entry'),head=el('div','entry-head');
+      head.appendChild(el('h3','',item.title));if(item.date)head.appendChild(el('span','date',item.date));wrap.appendChild(head);
+      if(item.subtitle)wrap.appendChild(el('div','subline',item.subtitle));
+      if(item.bullets?.length){const ul=el('ul');for(const point of item.bullets)ul.appendChild(el('li','',point));wrap.appendChild(ul);}
+      const url=safeUrl(item.link);if(url){const a=el('a','',d.view);a.href=url;a.target='_blank';a.rel='noopener noreferrer';wrap.appendChild(a);}
+      s.appendChild(wrap);
+    }
+  }
+  entries(d.education,d.titles.education);
+  entries(d.experience,d.titles.experience);
+  entries(d.publications,d.titles.publications);
+  entries(d.projects,d.titles.projects);
+  if(d.skills.length){const s=section(d.titles.skills),tags=el('div','tag-list');for(const skill of d.skills)tags.appendChild(el('span','tag',skill));s.appendChild(tags);}
+  if(d.awards.length){const s=section(d.titles.awards),ul=el('ul');for(const award of d.awards)ul.appendChild(el('li','',award));s.appendChild(ul);}
+}
+const photo = document.getElementById('photo');
+photo.addEventListener('load',()=>{photo.hidden=false;document.getElementById('photo-placeholder').hidden=true;});
+photo.addEventListener('error',()=>{photo.hidden=true;document.getElementById('photo-placeholder').hidden=false;});
+render('en');
+</script>
+</body>
+</html>
