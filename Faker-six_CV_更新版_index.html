@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="王麒勛｜國立陽明交通大學科技管理研究所｜醫學影像分割、電腦視覺與深度學習個人履歷">
+  <title>王麒勛 Chi-Shiun Wang｜個人履歷</title>
+  <style>
+    :root { --navy:#223a70; --deep:#142a50; --ink:#202b3b; --muted:#627085; --line:#dfe6f1; --light:#f3f6fb; --accent:#e9f0fc; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:#e9edf3; color:var(--ink); font-family:"Noto Sans TC","Microsoft JhengHei","Segoe UI",Arial,sans-serif; line-height:1.8; }
+    a { color:#23549a; text-underline-offset:3px; }
+    a:hover { color:#0b3274; }
+    .page { max-width:1050px; margin:24px auto; background:#fff; box-shadow:0 14px 48px rgba(15,32,60,.10); }
+    header { background:linear-gradient(120deg,var(--navy),var(--deep)); color:#fff; padding:34px 45px; display:flex; gap:30px; align-items:center; justify-content:space-between; }
+    header h1 { margin:0; font-size:32px; letter-spacing:1px; }
+    .english { font-size:17px; font-weight:400; opacity:.85; margin-left:8px; }
+    .subtitle { font-size:15px; margin:6px 0 14px; opacity:.95; }
+    .contact { display:flex; flex-wrap:wrap; gap:5px 16px; font-size:13px; }
+    .contact a { color:#fff; }
+    .photo { width:116px; height:116px; flex:0 0 116px; border:3px solid rgba(255,255,255,.85); border-radius:50%; object-fit:cover; }
+    .photo-placeholder { display:flex; justify-content:center; align-items:center; width:116px; height:116px; flex:0 0 116px; border:2px dashed rgba(255,255,255,.6); border-radius:50%; font-size:13px; text-align:center; line-height:1.5; color:#fff; }
+    main { padding:25px 45px 40px; }
+    .actions { display:flex; justify-content:flex-end; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
+    button,.button { display:inline-block; cursor:pointer; border:1px solid var(--navy); border-radius:6px; padding:5px 13px; background:#fff; color:var(--navy); font:inherit; font-size:13px; text-decoration:none; }
+    button:hover,.button:hover { background:var(--accent); }
+    section { margin:23px 0 31px; }
+    h2 { font-size:20px; color:var(--navy); margin:0 0 14px; padding-bottom:6px; border-bottom:2px solid var(--navy); letter-spacing:.4px; }
+    h3 { font-size:16px; margin:0; color:var(--ink); line-height:1.5; }
+    p { margin:7px 0 12px; font-size:14px; }
+    ul { margin:8px 0; padding-left:22px; font-size:14px; }
+    li { margin-bottom:5px; }
+    .item { margin:0 0 22px; }
+    .item-title { display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap; }
+    .date { color:var(--muted); font-size:13px; }
+    .sub { color:var(--muted); font-size:13px; margin:3px 0; }
+    .links { display:flex; flex-wrap:wrap; gap:8px; margin-top:9px; }
+    .links a { padding:3px 10px; border:1px solid #c5d5ed; color:var(--navy); background:#f8fbff; border-radius:5px; font-size:12px; text-decoration:none; }
+    .links a:hover { background:var(--accent); }
+    .tag-list { display:flex; flex-wrap:wrap; gap:7px; margin:9px 0; }
+    .tag { color:#314f7e; background:#edf3fb; border-radius:5px; padding:2px 9px; font-size:12px; }
+    .note { font-size:12px; color:var(--muted); background:#f7f9fc; border-left:3px solid #b6c8e6; padding:8px 12px; }
+    footer { text-align:center; border-top:1px solid var(--line); color:var(--muted); font-size:12px; padding:15px; }
+    @media(max-width:650px) { .page { margin:0; } header { padding:25px 21px; align-items:flex-start; gap:12px; } header h1 { font-size:25px; } .english { display:block; margin:0; } .photo,.photo-placeholder { width:78px; height:78px; flex-basis:78px; } main { padding:18px 22px 30px; } .contact { gap:4px 12px; } }
+    @media print { body { background:#fff; } .page { margin:0; max-width:none; box-shadow:none; } .actions,.note { display:none; } header { print-color-adjust:exact; -webkit-print-color-adjust:exact; } .tag,.links a { print-color-adjust:exact; -webkit-print-color-adjust:exact; } .item { break-inside:avoid; } a { overflow-wrap:anywhere; } }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div>
+      <h1>王麒勛 <span class="english">Chi-Shiun Wang</span></h1>
+      <div class="subtitle">AI Researcher｜Computer Vision｜Medical Image Segmentation</div>
+      <div class="contact">
+        <span>國立陽明交通大學 科技管理研究所</span>
+        <a href="https://github.com/Faker-six" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://faker-six.github.io/cv/" target="_blank" rel="noopener">個人網站</a>
+        <!-- 請填寫自己的 Email，並移除此註解：<a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a> -->
+      </div>
+    </div>
+    <!-- 上傳 images/profile.jpg 後，將下面這行替換成 <img class="photo" src="images/profile.jpg" alt="個人照片"> -->
+    <div class="photo-placeholder">個人照片<br>待上傳</div>
+  </header>
+  <main>
+    <div class="actions">
+      <button onclick="window.print()">列印／另存 PDF</button>
+      <a class="button" href="https://github.com/Faker-six/cv" target="_blank" rel="noopener">GitHub 原始碼</a>
+    </div>
+
+    <section id="about">
+      <h2>個人簡介｜About Me</h2>
+      <p>目前就讀於<strong>國立陽明交通大學科技管理研究所</strong>，主要研究領域為<strong>醫學影像分割（Medical Image Segmentation）</strong>、深度學習與電腦視覺，專注互動式醫學影像分割、支援條件式分割、醫學影像基礎模型及模型特徵融合。</p>
+      <p>研究成果獲 <strong>ECCV 2026 Medical Foundation Models and Benchmarks (MEDFMB) Workshop</strong> 接受（Accepted）。除醫學影像分割外，亦研究 Diffusion Models、醫學影像生成、3D CT Segmentation、Continual Learning 等主題。曾於<strong>富萱科技</strong>實習，並與<strong>樂達創意科技股份有限公司</strong>合作，累積學術與產業實務經驗。</p>
+    </section>
+
+    <section id="education">
+      <h2>學歷｜Education</h2>
+      <div class="item">
+        <div class="item-title"><h3>國立陽明交通大學｜科技管理研究所</h3><span class="date">碩士班</span></div>
+        <p class="sub">National Yang Ming Chiao Tung University · Institute of Management of Technology</p>
+        <p>研究方向：人工智慧、電腦視覺、互動式醫學影像分割、深度學習。</p>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>學術論文｜Publications</h2>
+      <div class="item">
+        <div class="item-title"><h3>Controlled One-Click Benchmarking and Post-Fusion Recalibration for Support-Conditioned Medical Segmentation</h3><span class="date">2026</span></div>
+        <p class="sub">ECCV 2026 · Medical Foundation Models and Benchmarks (MEDFMB) Workshop · Accepted</p>
+        <ul>
+          <li>研究受控制的單點互動式醫學影像分割評估協定，降低支援樣本選擇與互動流程造成的比較偏差。</li>
+          <li>提出 Support-Aware Recalibration（SAR），整合 Large-Kernel Gating 與 Squeeze-and-Excitation 進行特徵重新校準。</li>
+          <li>以 BUSI、NerveUS-BP、Kvasir-SEG 等資料集及 Dice / IoU 指標評估分割表現。</li>
+        </ul>
+        <div class="links">
+          <a href="https://medfmb.github.io/#accepted-papers" target="_blank" rel="noopener">官方錄取名單 ↗</a>
+          <a href="https://medfmb.github.io/" target="_blank" rel="noopener">Workshop 網站 ↗</a>
+          <a href="pdf/ECCV2026_Paper.pdf" target="_blank" rel="noopener">查看論文 PDF ↗</a>
+          <a href="pdf/ECCV2026_Acceptance.pdf" target="_blank" rel="noopener">錄取證明 ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="industry">
+      <h2>實習與產業合作｜Industry Experience</h2>
+      <div class="item">
+        <div class="item-title"><h3>富萱科技｜實習經歷</h3><span class="date">實習期間待補</span></div>
+        <p>曾於富萱科技實習，具備企業環境中的專案合作及技術實務經驗。</p>
+        <p class="note">編輯提醒：請補上實際職稱、任務、技術、量化成果及實習期間，避免讓面試官看不到你的具體貢獻。</p>
+      </div>
+      <div class="item">
+        <div class="item-title"><h3>樂達創意科技股份有限公司｜產業合作</h3><span class="date">合作期間待補</span></div>
+        <p>曾與樂達創意科技股份有限公司進行合作，參與產學之間的技術交流及專案協作。</p>
+        <p class="note">編輯提醒：請填寫實際合作專案、個人負責工作及可公開的成果，勿上傳保密文件。</p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>研究專案｜Research Projects</h2>
+      <div class="item">
+        <h3>01｜互動式醫學影像分割</h3>
+        <p class="sub">Interactive Medical Image Segmentation · PyTorch · MultiverSeg · CNN · Attention</p>
+        <ul>
+          <li>研究單點及多點互動分割，結合 Query Image、Support Image、Support Mask 與點提示等資訊。</li>
+          <li>探討 Large-Kernel Convolution、Spatial Gating、Channel Attention 與 Feature Fusion。</li>
+          <li>使用超音波及內視鏡影像資料集，比較不同互動條件下的 Dice、IoU 與 AUC。</li>
+        </ul>
+      </div>
+      <div class="item">
+        <h3>02｜醫學影像生成與擴散模型</h3>
+        <p class="sub">Medical Image Generation · Latent Diffusion · Stable Diffusion · DDIM</p>
+        <ul>
+          <li>研究乳房超音波影像生成與重建，並探討 Speckle、Attenuation 等物理先驗。</li>
+          <li>使用 FID、KID、PSNR、SSIM、MS-SSIM、LPIPS 等指標評估影像品質。</li>
+        </ul>
+      </div>
+      <div class="item">
+        <h3>03｜3D 醫學影像分割</h3>
+        <p class="sub">3D CT Segmentation · nnU-Net v2 · ROI · Multi-rater Annotation</p>
+        <ul>
+          <li>研究胰臟癌血管侵犯相關 CT 資料的 ROI 分割及多標註者整合。</li>
+          <li>使用 nnU-Net v2、STAPLE 共識標註及 3D 分割評估流程。</li>
+        </ul>
+      </div>
+      <div class="item">
+        <h3>04｜持續學習與高效率訓練</h3>
+        <p class="sub">Continual Learning · L2P · DualPrompt · CODA-Prompt · Zeroth-Order Optimization</p>
+        <ul>
+          <li>探討循序學習下的災難性遺忘、Prompt Learning 與模型記憶效率。</li>
+          <li>研究零階最佳化技術於高效率訓練的潛在應用。</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <section id="additional-projects">
+      <h2>其他作品與專題｜Selected Projects &amp; Portfolio</h2>
+      <div class="item">
+        <div class="item-title"><h3>05｜COVID-19 咳嗽聲辨識與輔助分類</h3><span class="date">機器學習課程團隊專案</span></div>
+        <p class="sub">Audio Classification · Signal Processing · MFCC · SVM · Python</p>
+        <ul>
+          <li>使用咳嗽聲音訊資料進行 COVID-19 陽性與陰性分類研究，探討非侵入式聲音分析的輔助篩檢應用。</li>
+          <li>進行音訊前處理與特徵萃取，包含梅爾頻率倒譜係數（MFCC）及頻譜分析，並研究 SVM 等分類模型。</li>
+          <li>探討資料清理、類別不平衡、訓練／驗證／測試資料切分與模型效能評估。</li>
+        </ul>
+        <div class="links">
+          <a href="pdf/COVID19_Cough_Report.pdf" target="_blank" rel="noopener">完整研究報告 PDF ↗</a>
+          <a href="pdf/COVID19_Cough_Presentation.pdf" target="_blank" rel="noopener">專案簡報 PDF ↗</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-title"><h3>06｜基於最佳化線性融合之夜間影像強化方法</h3><span class="date">共同作者專題</span></div>
+        <p class="sub">Computer Vision · Image Enhancement · Histogram Equalization · Metaheuristic Optimization</p>
+        <ul>
+          <li>共同參與夜間影像增強研究，融合原始影像與直方圖均化後影像，以改善低照度影像的對比與細節呈現。</li>
+          <li>採用基於區塊的對比度品質指標（PCQI）評估影像增強效果，研究以啟發式最佳化方法尋找線性融合權重。</li>
+          <li>專題文件比較傳統直方圖均化及 CLAHE 等方法，並以影像實驗評估效果。</li>
+        </ul>
+        <div class="links"><a href="pdf/Night_Image_Enhancement.pdf" target="_blank" rel="noopener">查看共同作者專題 PDF ↗</a></div>
+      </div>
+      <div class="item">
+        <div class="item-title"><h3>07｜自製 RPG 遊戲作品</h3><span class="date">個人作品</span></div>
+        <p class="sub">Game Development · Independent Project · Video Demo</p>
+        <p>自製 RPG 遊戲作品，以影片展示實際遊戲內容與成果；可透過下方連結觀看操作示範。</p>
+        <div class="links"><a href="https://www.youtube.com/watch?v=PJUzrD6Eip0" target="_blank" rel="noopener">觀看 RPG 遊戲展示影片（YouTube）↗</a></div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>專業技能｜Technical Skills</h2>
+      <p><strong>程式與框架：</strong>Python、PyTorch、Git、GitHub、Jupyter Notebook</p>
+      <p><strong>深度學習：</strong>CNN、U-Net、nnU-Net、Transformer、Attention、Diffusion Models</p>
+      <p><strong>電腦視覺：</strong>Medical Image Segmentation、Interactive Segmentation、Image Generation、2D / 3D Image Processing</p>
+      <p><strong>模型評估：</strong>Dice、IoU、AUC、FID、KID、PSNR、SSIM、LPIPS</p>
+      <p><strong>開發環境：</strong>Ubuntu、Linux、Windows、WSL、CUDA、Conda、VS Code、tmux</p>
+      <div class="tag-list"><span class="tag">Medical AI</span><span class="tag">Computer Vision</span><span class="tag">Interactive Segmentation</span><span class="tag">PyTorch</span><span class="tag">Diffusion</span><span class="tag">Continual Learning</span></div>
+    </section>
+  </main>
+  <footer>© <span id="year"></span> Chi-Shiun Wang · Built with HTML / CSS · Hosted on GitHub Pages</footer>
+</div>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
